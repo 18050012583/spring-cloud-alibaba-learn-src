@@ -1,0 +1,60 @@
+spring:
+  application:
+    name: alibaba-seata-order
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: my_test_tx_group
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+#        namespace: 98ace971-48b9-40f0-be64-05fb6ceec157
+        username: nacos
+        password: nacos
+      config:
+        server-addr: 127.0.0.1:8848
+#        namespace: 98ace971-48b9-40f0-be64-05fb6ceec157
+        username: nacos
+        password: nacos
+        file-extension: yaml
+
+  datasource:  # 链接数据库
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/seata_a?serverTimezone=UTC
+    username: root
+    password: root
+
+server:
+  port: 9092
+
+seata:
+  enabled: true
+  application-id: alibaba-seata-order
+  tx-service-group: my_test_tx_group
+  enable-auto-data-source-proxy: true
+  service:
+    vgroup-mapping:
+      my_test_tx_group: default
+    grouplist:
+      default: 127.0.0.1:8091
+  config:
+    type: nacos
+    nacos:
+      namespace:
+      #这里的地址就是你的nacos的地址,可以更换为线上
+      serverAddr: 127.0.0.1:8848
+      #这里的名字就是registry.conf中 nacos的group名字
+      group: SEATA_GROUP
+      userName: "nacos"
+      password: "nacos"
+  registry:
+    type: nacos
+    nacos:
+      application: seata-server
+      #这里的地址就是你的nacos的地址,可以更换为线上
+      server-addr: 127.0.0.1:8848
+      #这里的名字就是registry.conf中 nacos的group名字
+      group: SEATA_GROUP
+      namespace:
+      userName: "nacos"
+      password: "nacos"

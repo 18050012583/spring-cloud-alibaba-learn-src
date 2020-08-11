@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: alibaba-seata-store
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: my_test_tx_group
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+#        namespace: 98ace971-48b9-40f0-be64-05fb6ceec157
+        username: nacos
+        password: nacos
+      config:
+        server-addr: 127.0.0.1:8848
+#        namespace: 98ace971-48b9-40f0-be64-05fb6ceec157
+        username: nacos
+        password: nacos
+        file-extension: yaml
+
+  datasource:  # 链接数据库
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/seata_b?serverTimezone=UTC
+    username: root
+    password: root
+
+server:
+  port: 9091

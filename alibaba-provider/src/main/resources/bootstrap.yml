@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: alibaba-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: 98ace971-48b9-40f0-be64-05fb6ceec157
+        username: nacos
+        password: nacos
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: 98ace971-48b9-40f0-be64-05fb6ceec157
+        username: nacos
+        password: nacos
+        file-extension: yaml
+
