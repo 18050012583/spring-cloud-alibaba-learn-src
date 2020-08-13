@@ -15,7 +15,7 @@ public class StoreController {
     }
 
     @RequestMapping(value = "/store/decrease")
-    public boolean decrease(Long productId, Integer count){
+    public boolean decrease(Integer productId, Integer count){
         Store store = storeRepository.findByProductId(productId);
         store.setTotal(store.getTotal() - count);
         storeRepository.save(store);

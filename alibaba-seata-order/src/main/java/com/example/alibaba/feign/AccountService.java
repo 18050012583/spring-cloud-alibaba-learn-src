@@ -10,6 +10,6 @@ import java.math.BigDecimal;
 public interface AccountService {
 
     @RequestMapping(value = "/account/decrease")
-    String decrease(@RequestParam("userId")Long userId, @RequestParam("money")  BigDecimal money);
+    String decrease(@RequestParam("userId")Integer userId, @RequestParam("money")  BigDecimal money);
 
 }

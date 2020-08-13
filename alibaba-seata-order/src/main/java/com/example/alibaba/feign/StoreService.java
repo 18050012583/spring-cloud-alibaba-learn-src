@@ -8,5 +8,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface StoreService {
 
     @RequestMapping(value = "/store/decrease")
-    String decrease(@RequestParam("productId") Long productId, @RequestParam("count")Integer count);
+    String decrease(@RequestParam("productId") Integer productId, @RequestParam("count")Integer count);
 }

@@ -16,10 +16,11 @@ public class AccountController {
     }
 
     @RequestMapping(value = "/account/decrease")
-    public boolean decrease(Long userId, BigDecimal money){
+    public boolean decrease(Integer userId, BigDecimal money){
         Account account = accountRepository.findByUserId(userId);
         account.setTotal(account.getTotal().subtract(money));
         accountRepository.save(account);
+//        int i= 1/0;
         return true;
     }
 }

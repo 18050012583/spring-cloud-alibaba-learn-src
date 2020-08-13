@@ -1,17 +1,18 @@
+server:
+  port: 8080
 spring:
   application:
-    name: alibaba-provider
+    name: alibaba-provider # 服务名
   cloud:
     nacos:
-      discovery:
-        server-addr: 127.0.0.1:8848
-        namespace: 98ace971-48b9-40f0-be64-05fb6ceec157
-        username: nacos
-        password: nacos
-      config:
-        server-addr: 127.0.0.1:8848
-        namespace: 98ace971-48b9-40f0-be64-05fb6ceec157
-        username: nacos
-        password: nacos
-        file-extension: yaml
-
+      discovery: # 服务发现
+        server-addr: 127.0.0.1:8848 # nacos地址
+        namespace: 98ace971-48b9-40f0-be64-05fb6ceec157 # 命名空间
+        username: nacos # 用户名
+        password: nacos # 密码
+      config: # 配置中心
+        server-addr: 127.0.0.1:8848 # nacos地址
+        namespace: 98ace971-48b9-40f0-be64-05fb6ceec157 # 命名空间
+        username: nacos # 用户名
+        password: nacos # 密码
+        file-extension: yaml # 配置文件扩展名
