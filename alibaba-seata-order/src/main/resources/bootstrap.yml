@@ -1,4 +1,10 @@
 spring:
+  redis:
+    host: 172.16.208.9
+    port: 8001
+    database: 2
+    password: testredis
+    timeout: 10000
   application:
     name: alibaba-seata-order
   cloud:
