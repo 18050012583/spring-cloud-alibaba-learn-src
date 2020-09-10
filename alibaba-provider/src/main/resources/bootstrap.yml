@@ -16,3 +16,7 @@ spring:
         username: nacos # 用户名
         password: nacos # 密码
         file-extension: yaml # 配置文件扩展名
+    sentinel:
+      transport:
+        port: 9999 # 跟控制台交流的端口，随意指定即可
+        dashboard: localhost:8080 # 指定控制台的地址
