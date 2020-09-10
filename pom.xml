@@ -9,6 +9,7 @@
         <module>alibaba-seata-account</module>
         <module>alibaba-seata-store</module>
         <module>alibaba-seata-order</module>
+        <module>alibaba-gateway</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

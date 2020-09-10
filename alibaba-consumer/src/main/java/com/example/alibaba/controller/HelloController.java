@@ -14,9 +14,24 @@ public class HelloController {
         this.helloService = helloService;
     }
 
-    @RequestMapping("/hello")
+    @RequestMapping("/test")
     public String hello() {
-        String hello = helloService.hello();
-        return hello;
+        String msg = helloService.hello();
+        if(msg.equals("error")) {
+            return "error...";
+        }
+        //模拟调用alibaba-provider微服务需要2s的时间
+//        try {
+//            Thread.sleep(2000l);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+        return msg;
+    }
+
+    //测试高并发
+    @RequestMapping("/hello2")
+    public String message() {
+        return "测试高并发";
     }
 }

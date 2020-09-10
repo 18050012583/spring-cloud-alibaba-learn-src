@@ -1,0 +1,7 @@
+server:
+  port: 8081
+  tomcat:
+    max-threads: 10 #降tomcat的最大并发值修改为10用于模拟并发,默认是200
+spring:
+  application:
+    name: alibaba-consumer

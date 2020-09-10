@@ -1,8 +1,4 @@
-server:
-  port: 8081
 spring:
-  application:
-    name: alibaba-consumer
   cloud:
     nacos:
       discovery:
@@ -16,3 +12,21 @@ spring:
         username: nacos
         password: nacos
         file-extension: yaml
+    sentinel:
+#      web-context-unify: false
+      transport:
+        port: 9999 # CommonFilter.java跟控制台交流的端口，随意指定即可
+        dashboard: localhost:8080 # 指定控制台的地址
+#      datasource:
+#        ds1:
+#          nacos:
+#            server-addr: localhost:8848
+#            dataId: sentinel-config
+#            namespace: eae2c027-a06b-4b57-9495-58762a93e78c
+#            groupId: DEFAULT_GROUP
+#            data-type: json
+#            rule-type: flow
+
+feign:
+  sentinel:
+    enabled: true
